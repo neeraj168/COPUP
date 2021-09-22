@@ -1,0 +1,26 @@
+ class MainActivity : AppCompatActivity() {
+ 	@RequiresApi(Build.VERSION_CODES.O)
+ 	override fun onCreate(savedInstanceState: Bundle?) {
+ 		super.onCreate(savedInstanceState)
+ 		setContentView(R.layout.activity_main)
+
+ 			webViewsetup()
+ 			Toast(this).apply {
+ 				duration = Toast.LENGTH_SHORT
+ 				view = layoutInflater.inflate(R.layout.custom_toast,toast)
+ 				show()
+ 			}
+
+ 	}
+
+ 		@RequiresApi(Build.VERSION_CODES.O)
+ 		private fun webViewsetup() // makes sures the webpage opens in the app.
+ 		{
+ 			wv.webViewClient = WebViewClient()
+ 			wv.apply {
+ 				loadUrl("https://www.google.com/")
+ 				settings.javaScriptEnabled = true
+ 				settings.safeBrowsingEnabled = 
+ 			}
+ }
+ 
